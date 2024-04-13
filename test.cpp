@@ -6,7 +6,7 @@ int main(int argc, char** argv) {
 
   for(int i = 0; i < 4; i++) {
     int result = process(values[i]);
-    if(result[i] != expected[i] {
+    if(result[i] != expected[i]) {
       std::cout << "Expected " << expected[i] << " but got " << result[i] << std::endl;
       return 1;
     }
