@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build library
-      run: g++ mylib.cpp -I ./-shared -o libmylib.so
+      run: g++ mylib.cpp -I ./ -shared -o libmylib.so
 
     - name: Build test
       run: g++ test.cpp -l mylib -L ./ -o run_test
