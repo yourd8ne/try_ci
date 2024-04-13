@@ -17,4 +17,6 @@ jobs:
       run: g++ test.cpp -l mylib -L ./ -o run_test
 
     - name: Run test
-      run: ./run_test
+      run: 
+        export LD_LIBRARY_PATH=./
+        ./run_test
