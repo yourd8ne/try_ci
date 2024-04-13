@@ -1,0 +1,20 @@
+name: CI adventures
+
+on: [push, pull_request]
+
+jobs:
+  run_linux:
+    runs_on: ubuntu-latest
+
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v2
+
+    - name: Build library
+      run: g++ mylib.cpp -I ./-shared -o libmylib.so
+
+    - name: Build test
+      run: g++ test.cpp -l mylib -L ./ -o run_test
+
+    - name: Run test
+      run: ./run_test
