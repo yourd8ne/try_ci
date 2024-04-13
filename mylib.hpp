@@ -2,4 +2,4 @@
 
 static const int kMyConstant = 7;
 
-int process(value);
+int process(int value);
